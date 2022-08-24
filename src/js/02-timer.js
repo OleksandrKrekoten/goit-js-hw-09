@@ -1,6 +1,6 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
-import swal from 'sweetalert';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const refs = {
     inputDatetimePicker: document.querySelector('#datetime-picker'),
@@ -12,8 +12,8 @@ const options = {
   time_24hr: false,
   defaultDate: new Date(),
     minuteIncrement: 1,
-    onClose(selectedDates) {
-      swal( "","Please choose a date in the future", "warning");
+  onClose(selectedDates) {
+      Notify.failure('Please choose a date in the future');
     console.log(selectedDates[0]);
   },
 };
