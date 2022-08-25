@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Promise generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/common.css" />
   </head>
   <body>
@@ -12,17 +13,17 @@
     <form class="form">
       <label>
         First delay (ms)
-        <input type="number" name="delay" required />
+        <input type="number" name="delay" required  class="form-control"/>
       </label>
       <label>
         Delay step (ms)
-        <input type="number" name="step" required />
+        <input type="number" name="step" required  class="form-control"/>
       </label>
       <label>
         Amount
-        <input type="number" name="amount" required />
+        <input type="number" name="amount" required class="form-control" />
       </label>
-      <button type="submit">Create promises</button>
+      <button class=" btn btn-primary" type="submit">Create promises</button>
     </form>
 
     <script src="js/03-promises.js" type="module"></script>
