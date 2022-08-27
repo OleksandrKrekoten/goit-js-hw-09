@@ -12,8 +12,7 @@ const refs = {
 }
 const DELAY = 1000;
 let intervalID = null;
-const timeNow = Date.now()
-console.log(timeNow);
+
 
 const options = {
   enableTime: true,
