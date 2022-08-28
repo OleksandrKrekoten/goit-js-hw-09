@@ -25,7 +25,7 @@ const options = {
     return  Notify.failure('Please choose a date in the future');
     }
     refs.startTimerBtn.disabled = false
-    const timer = () => {
+   
      intervalID = setInterval(() => {
         const timeStart = new Date()
         let difference = selectedDates[0] - timeStart
@@ -40,7 +40,7 @@ const options = {
          
        }
      },DELAY)
-    }
+    
     
     refs.startTimerBtn.addEventListener('click', timer)
   },
