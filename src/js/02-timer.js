@@ -22,28 +22,28 @@ const options = {
   onClose(selectedDates) {
     if (selectedDates[0] < new Date().getTime()) {
       refs.startTimerBtn.disabled = true
-    return  Notify.failure('Please choose a date in the future');
+      return Notify.failure('Please choose a date in the future');
     }
     refs.startTimerBtn.disabled = false
    
-     intervalID = setInterval(() => {
-        const timeStart = new Date()
-        let difference = selectedDates[0] - timeStart
+    const startTimer = () => {
+      intervalID = setInterval(() => {
+      const timeStart = new Date()
+      let difference = selectedDates[0] - timeStart
       const { days, hours, minutes, seconds } = convertMs(difference);
       refs.days.textContent = timeFormat(days);
       refs.hours.textContent = timeFormat(hours);
       refs.minutes.textContent = timeFormat(minutes);
-       refs.seconds.textContent = timeFormat(seconds);
-       refs.inputDatetimePicker.disabled = true
-       if (difference < 1000) {
-         clearTimeout(intervalID)
+      refs.seconds.textContent = timeFormat(seconds);
+      refs.inputDatetimePicker.disabled = true
+      if (difference < 1000) {
+        clearTimeout(intervalID)
          
-       }
-     },DELAY)
-    
-    
-    refs.startTimerBtn.addEventListener('click', timer)
-  },
+      }
+    }, DELAY) 
+    }
+    refs.startTimerBtn.addEventListener('click',startTimer)
+  }
 };
 flatpickr("#datetime-picker", options);
 
